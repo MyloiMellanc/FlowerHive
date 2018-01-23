@@ -7,7 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF1169F6200BD7A300E8A92E /* boardfactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF1169F4200BD7A300E8A92E /* boardfactory.cpp */; };
+		BF1169F9200BD81200E8A92E /* sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF1169F7200BD81200E8A92E /* sprite.cpp */; };
+		BF49CF62200676330096FA5D /* board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF49CF60200676330096FA5D /* board.cpp */; };
+		BF49CF652006763D0096FA5D /* tile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF49CF632006763D0096FA5D /* tile.cpp */; };
+		BF49CF68200676450096FA5D /* line.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF49CF66200676450096FA5D /* line.cpp */; };
+		BF49CF7E200693CF0096FA5D /* flower.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF49CF7C200693CF0096FA5D /* flower.cpp */; };
+		BF49CF81200693D60096FA5D /* ovary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF49CF7F200693D60096FA5D /* ovary.cpp */; };
+		BFC5272E2014EA4D0015518A /* action.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFC5272C2014EA4D0015518A /* action.cpp */; };
+		BFC527342014EC200015518A /* player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFC527322014EC200015518A /* player.cpp */; };
+		BFC527372014EF620015518A /* game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFC527352014EF620015518A /* game.cpp */; };
+		BFC5273A2014EF970015518A /* layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFC527382014EF970015518A /* layer.cpp */; };
+		BFC5273D2014EFA90015518A /* scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFC5273B2014EFA90015518A /* scene.cpp */; };
+		BFC527402014EFB80015518A /* gamestate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFC5273E2014EFB80015518A /* gamestate.cpp */; };
+		BFC527462014F0370015518A /* inventory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFC527442014F0370015518A /* inventory.cpp */; };
+		BFC5274C20150E7D0015518A /* manure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFC5274A20150E7D0015518A /* manure.cpp */; };
+		BFC5274F201512E00015518A /* playerfactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFC5274D201512E00015518A /* playerfactory.cpp */; };
+		BFC52752201513170015518A /* gamestatefactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFC52750201513170015518A /* gamestatefactory.cpp */; };
+		BFC52755201513C60015518A /* playermanager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFC52753201513C60015518A /* playermanager.cpp */; };
+		BFC52758201516B40015518A /* gamemaster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFC52756201516B40015518A /* gamemaster.cpp */; };
+		BFC5275A201516E40015518A /* liblua.5.3.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC52759201516E30015518A /* liblua.5.3.4.dylib */; };
+		BFC5275D20151C930015518A /* gameactionqueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFC5275B20151C930015518A /* gameactionqueue.cpp */; };
+		BFC5276420151ED70015518A /* floweritem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFC5276220151ED70015518A /* floweritem.cpp */; };
+		BFC5276720151EE20015518A /* ovaryitem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFC5276520151EE20015518A /* ovaryitem.cpp */; };
+		BFC5276A20151EF80015518A /* item.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFC5276820151EF80015518A /* item.cpp */; };
 		BFF142082006025300C41BBB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFF142072006025300C41BBB /* main.cpp */; };
+		BFF142172006088D00C41BBB /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF142162006088D00C41BBB /* libSDL2-2.0.0.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +48,58 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BF0B9A452017090700E01770 /* macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macro.h; sourceTree = "<group>"; };
+		BF1169F4200BD7A300E8A92E /* boardfactory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = boardfactory.cpp; sourceTree = "<group>"; };
+		BF1169F5200BD7A300E8A92E /* boardfactory.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = boardfactory.hpp; sourceTree = "<group>"; };
+		BF1169F7200BD81200E8A92E /* sprite.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sprite.cpp; sourceTree = "<group>"; };
+		BF1169F8200BD81200E8A92E /* sprite.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = sprite.hpp; sourceTree = "<group>"; };
+		BF49CF60200676330096FA5D /* board.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = board.cpp; sourceTree = "<group>"; };
+		BF49CF61200676330096FA5D /* board.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = board.hpp; sourceTree = "<group>"; };
+		BF49CF632006763D0096FA5D /* tile.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tile.cpp; sourceTree = "<group>"; };
+		BF49CF642006763D0096FA5D /* tile.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = tile.hpp; sourceTree = "<group>"; };
+		BF49CF66200676450096FA5D /* line.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = line.cpp; sourceTree = "<group>"; };
+		BF49CF67200676450096FA5D /* line.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = line.hpp; sourceTree = "<group>"; };
+		BF49CF6B20067A7F0096FA5D /* vec2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vec2.h; sourceTree = "<group>"; };
+		BF49CF7C200693CF0096FA5D /* flower.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = flower.cpp; sourceTree = "<group>"; };
+		BF49CF7D200693CF0096FA5D /* flower.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = flower.hpp; sourceTree = "<group>"; };
+		BF49CF7F200693D60096FA5D /* ovary.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ovary.cpp; sourceTree = "<group>"; };
+		BF49CF80200693D60096FA5D /* ovary.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ovary.hpp; sourceTree = "<group>"; };
+		BFC5272C2014EA4D0015518A /* action.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = action.cpp; sourceTree = "<group>"; };
+		BFC5272D2014EA4D0015518A /* action.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = action.hpp; sourceTree = "<group>"; };
+		BFC527322014EC200015518A /* player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = player.cpp; sourceTree = "<group>"; };
+		BFC527332014EC200015518A /* player.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = player.hpp; sourceTree = "<group>"; };
+		BFC527352014EF620015518A /* game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = game.cpp; sourceTree = "<group>"; };
+		BFC527362014EF620015518A /* game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = game.hpp; sourceTree = "<group>"; };
+		BFC527382014EF970015518A /* layer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = layer.cpp; sourceTree = "<group>"; };
+		BFC527392014EF970015518A /* layer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = layer.hpp; sourceTree = "<group>"; };
+		BFC5273B2014EFA90015518A /* scene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = scene.cpp; sourceTree = "<group>"; };
+		BFC5273C2014EFA90015518A /* scene.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = scene.hpp; sourceTree = "<group>"; };
+		BFC5273E2014EFB80015518A /* gamestate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = gamestate.cpp; sourceTree = "<group>"; };
+		BFC5273F2014EFB80015518A /* gamestate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = gamestate.hpp; sourceTree = "<group>"; };
+		BFC527442014F0370015518A /* inventory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = inventory.cpp; sourceTree = "<group>"; };
+		BFC527452014F0370015518A /* inventory.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = inventory.hpp; sourceTree = "<group>"; };
+		BFC5274A20150E7D0015518A /* manure.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = manure.cpp; sourceTree = "<group>"; };
+		BFC5274B20150E7D0015518A /* manure.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = manure.hpp; sourceTree = "<group>"; };
+		BFC5274D201512E00015518A /* playerfactory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = playerfactory.cpp; sourceTree = "<group>"; };
+		BFC5274E201512E00015518A /* playerfactory.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = playerfactory.hpp; sourceTree = "<group>"; };
+		BFC52750201513170015518A /* gamestatefactory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = gamestatefactory.cpp; sourceTree = "<group>"; };
+		BFC52751201513170015518A /* gamestatefactory.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = gamestatefactory.hpp; sourceTree = "<group>"; };
+		BFC52753201513C60015518A /* playermanager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = playermanager.cpp; sourceTree = "<group>"; };
+		BFC52754201513C60015518A /* playermanager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = playermanager.hpp; sourceTree = "<group>"; };
+		BFC52756201516B40015518A /* gamemaster.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = gamemaster.cpp; sourceTree = "<group>"; };
+		BFC52757201516B40015518A /* gamemaster.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = gamemaster.hpp; sourceTree = "<group>"; };
+		BFC52759201516E30015518A /* liblua.5.3.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = liblua.5.3.4.dylib; path = ../../../../../usr/local/Cellar/lua/5.3.4_2/lib/liblua.5.3.4.dylib; sourceTree = "<group>"; };
+		BFC5275B20151C930015518A /* gameactionqueue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = gameactionqueue.cpp; sourceTree = "<group>"; };
+		BFC5275C20151C930015518A /* gameactionqueue.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = gameactionqueue.hpp; sourceTree = "<group>"; };
+		BFC5276220151ED70015518A /* floweritem.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = floweritem.cpp; sourceTree = "<group>"; };
+		BFC5276320151ED70015518A /* floweritem.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = floweritem.hpp; sourceTree = "<group>"; };
+		BFC5276520151EE20015518A /* ovaryitem.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ovaryitem.cpp; sourceTree = "<group>"; };
+		BFC5276620151EE20015518A /* ovaryitem.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ovaryitem.hpp; sourceTree = "<group>"; };
+		BFC5276820151EF80015518A /* item.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = item.cpp; sourceTree = "<group>"; };
+		BFC5276920151EF80015518A /* item.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = item.hpp; sourceTree = "<group>"; };
 		BFF142042006025300C41BBB /* FlowerHive */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FlowerHive; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFF142072006025300C41BBB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		BFF142162006088D00C41BBB /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,15 +107,108 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFF142172006088D00C41BBB /* libSDL2-2.0.0.dylib in Frameworks */,
+				BFC5275A201516E40015518A /* liblua.5.3.4.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF49CF5F200676230096FA5D /* game */ = {
+			isa = PBXGroup;
+			children = (
+				BFC527352014EF620015518A /* game.cpp */,
+				BFC527362014EF620015518A /* game.hpp */,
+				BFC52756201516B40015518A /* gamemaster.cpp */,
+				BFC52757201516B40015518A /* gamemaster.hpp */,
+				BFC5275B20151C930015518A /* gameactionqueue.cpp */,
+				BFC5275C20151C930015518A /* gameactionqueue.hpp */,
+			);
+			path = game;
+			sourceTree = "<group>";
+		};
+		BF49CF6A20067A730096FA5D /* core */ = {
+			isa = PBXGroup;
+			children = (
+				BF49CF6B20067A7F0096FA5D /* vec2.h */,
+				BF0B9A452017090700E01770 /* macro.h */,
+				BFC5272C2014EA4D0015518A /* action.cpp */,
+				BFC5272D2014EA4D0015518A /* action.hpp */,
+				BF1169F7200BD81200E8A92E /* sprite.cpp */,
+				BF1169F8200BD81200E8A92E /* sprite.hpp */,
+				BFC527382014EF970015518A /* layer.cpp */,
+				BFC527392014EF970015518A /* layer.hpp */,
+				BFC5273B2014EFA90015518A /* scene.cpp */,
+				BFC5273C2014EFA90015518A /* scene.hpp */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		BF49CF86200698120096FA5D /* ui */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		BF49CF8D200699900096FA5D /* board */ = {
+			isa = PBXGroup;
+			children = (
+				BF49CF60200676330096FA5D /* board.cpp */,
+				BF49CF61200676330096FA5D /* board.hpp */,
+				BF49CF632006763D0096FA5D /* tile.cpp */,
+				BF49CF642006763D0096FA5D /* tile.hpp */,
+				BF49CF66200676450096FA5D /* line.cpp */,
+				BF49CF67200676450096FA5D /* line.hpp */,
+				BF49CF7C200693CF0096FA5D /* flower.cpp */,
+				BF49CF7D200693CF0096FA5D /* flower.hpp */,
+				BF49CF7F200693D60096FA5D /* ovary.cpp */,
+				BF49CF80200693D60096FA5D /* ovary.hpp */,
+				BF1169F4200BD7A300E8A92E /* boardfactory.cpp */,
+				BF1169F5200BD7A300E8A92E /* boardfactory.hpp */,
+			);
+			path = board;
+			sourceTree = "<group>";
+		};
+		BF49CF8E20069A430096FA5D /* player */ = {
+			isa = PBXGroup;
+			children = (
+				BFC52753201513C60015518A /* playermanager.cpp */,
+				BFC52754201513C60015518A /* playermanager.hpp */,
+				BFC527322014EC200015518A /* player.cpp */,
+				BFC527332014EC200015518A /* player.hpp */,
+				BFC5274A20150E7D0015518A /* manure.cpp */,
+				BFC5274B20150E7D0015518A /* manure.hpp */,
+				BFC527442014F0370015518A /* inventory.cpp */,
+				BFC527452014F0370015518A /* inventory.hpp */,
+				BFC5274D201512E00015518A /* playerfactory.cpp */,
+				BFC5274E201512E00015518A /* playerfactory.hpp */,
+				BFC5276820151EF80015518A /* item.cpp */,
+				BFC5276920151EF80015518A /* item.hpp */,
+				BFC5276220151ED70015518A /* floweritem.cpp */,
+				BFC5276320151ED70015518A /* floweritem.hpp */,
+				BFC5276520151EE20015518A /* ovaryitem.cpp */,
+				BFC5276620151EE20015518A /* ovaryitem.hpp */,
+			);
+			path = player;
+			sourceTree = "<group>";
+		};
+		BF49CF8F20069A4D0096FA5D /* state */ = {
+			isa = PBXGroup;
+			children = (
+				BFC5273E2014EFB80015518A /* gamestate.cpp */,
+				BFC5273F2014EFB80015518A /* gamestate.hpp */,
+				BFC52750201513170015518A /* gamestatefactory.cpp */,
+				BFC52751201513170015518A /* gamestatefactory.hpp */,
+			);
+			path = state;
+			sourceTree = "<group>";
+		};
 		BFF141FB2006025300C41BBB = {
 			isa = PBXGroup;
 			children = (
+				BFF142122006031D00C41BBB /* Lib */,
 				BFF142062006025300C41BBB /* FlowerHive */,
 				BFF142052006025300C41BBB /* Products */,
 			);
@@ -57,9 +225,24 @@
 		BFF142062006025300C41BBB /* FlowerHive */ = {
 			isa = PBXGroup;
 			children = (
+				BF49CF86200698120096FA5D /* ui */,
+				BF49CF6A20067A730096FA5D /* core */,
+				BF49CF8F20069A4D0096FA5D /* state */,
+				BF49CF8E20069A430096FA5D /* player */,
+				BF49CF8D200699900096FA5D /* board */,
+				BF49CF5F200676230096FA5D /* game */,
 				BFF142072006025300C41BBB /* main.cpp */,
 			);
 			path = FlowerHive;
+			sourceTree = "<group>";
+		};
+		BFF142122006031D00C41BBB /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				BFC52759201516E30015518A /* liblua.5.3.4.dylib */,
+				BFF142162006088D00C41BBB /* libSDL2-2.0.0.dylib */,
+			);
+			path = Lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,7 +302,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF49CF62200676330096FA5D /* board.cpp in Sources */,
+				BF1169F9200BD81200E8A92E /* sprite.cpp in Sources */,
+				BFC52758201516B40015518A /* gamemaster.cpp in Sources */,
+				BFC52755201513C60015518A /* playermanager.cpp in Sources */,
+				BFC527402014EFB80015518A /* gamestate.cpp in Sources */,
+				BFC5276420151ED70015518A /* floweritem.cpp in Sources */,
+				BFC52752201513170015518A /* gamestatefactory.cpp in Sources */,
+				BF49CF68200676450096FA5D /* line.cpp in Sources */,
+				BFC5273A2014EF970015518A /* layer.cpp in Sources */,
+				BFC5274C20150E7D0015518A /* manure.cpp in Sources */,
+				BF1169F6200BD7A300E8A92E /* boardfactory.cpp in Sources */,
+				BF49CF7E200693CF0096FA5D /* flower.cpp in Sources */,
 				BFF142082006025300C41BBB /* main.cpp in Sources */,
+				BFC5276720151EE20015518A /* ovaryitem.cpp in Sources */,
+				BFC527342014EC200015518A /* player.cpp in Sources */,
+				BFC5274F201512E00015518A /* playerfactory.cpp in Sources */,
+				BFC527372014EF620015518A /* game.cpp in Sources */,
+				BFC5276A20151EF80015518A /* item.cpp in Sources */,
+				BFC527462014F0370015518A /* inventory.cpp in Sources */,
+				BFC5273D2014EFA90015518A /* scene.cpp in Sources */,
+				BF49CF652006763D0096FA5D /* tile.cpp in Sources */,
+				BF49CF81200693D60096FA5D /* ovary.cpp in Sources */,
+				BFC5272E2014EA4D0015518A /* action.cpp in Sources */,
+				BFC5275D20151C930015518A /* gameactionqueue.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +439,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/sdl2/2.0.7/include,
+					/usr/local/Cellar/lua/5.2.4_4/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/lua/5.2.4_4/lib,
+					/usr/local/Cellar/sdl2/2.0.7/lib,
+					"$(PROJECT_DIR)/Lib",
+					/usr/local/Cellar/lua/5.3.4_2/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -241,6 +458,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/sdl2/2.0.7/include,
+					/usr/local/Cellar/lua/5.2.4_4/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/lua/5.2.4_4/lib,
+					/usr/local/Cellar/sdl2/2.0.7/lib,
+					"$(PROJECT_DIR)/Lib",
+					/usr/local/Cellar/lua/5.3.4_2/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
