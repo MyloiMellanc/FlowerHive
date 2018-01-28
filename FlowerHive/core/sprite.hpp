@@ -16,6 +16,11 @@
 #include <SDL2/SDL.h>
 
 
+
+#define SPRITE_METHOD SpriteMethodSDL
+
+
+
 class SpriteAction;
 class Layer;
 
@@ -90,7 +95,7 @@ public:
     
 protected:
     //Templaye Method implemented in SpriteMethod class
-    inline void drawTextureWithRect(Renderer* renderer)
+    inline void drawTextureWithRect()
     {
         _pMethod->drawTextureWithRect();
     }
@@ -102,7 +107,7 @@ protected:
     
 public:
     virtual void update(float dt);
-    virtual void render(Renderer* renderer) = 0;
+    virtual void render() = 0;
     virtual void touched(const Touch& touch) = 0;
     
     void setTexture(const char* texture_name);

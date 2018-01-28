@@ -87,7 +87,7 @@ Sprite::Sprite(Renderer* renderer)
 , _rect({0,0,0,0})
 , _pLayer(nullptr)
 {
-    _pMethod = new SpriteMethodSDL(renderer, this);
+    _pMethod = new SPRITE_METHOD(renderer, this);
 }
 
 
@@ -96,7 +96,7 @@ Sprite::Sprite(Renderer* renderer, const char* texture_name)
 , _rect({0,0,0,0})
 , _pLayer(nullptr)
 {
-    _pMethod = new SpriteMethodSDL(renderer, this, texture_name);
+    _pMethod = new SPRITE_METHOD(renderer, this, texture_name);
 }
 
 

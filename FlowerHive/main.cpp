@@ -63,9 +63,9 @@ public:
         
     }
     
-    virtual void render(Renderer* renderer)
+    virtual void render()
     {
-        drawTextureWithRect(renderer);
+        drawTextureWithRect();
     }
 };
 
@@ -93,7 +93,7 @@ int main(int argc, const char * argv[]) {
     
     
     
-    a->render(renderer);
+    a->render();
     
     
     
