@@ -13,6 +13,7 @@
 
 
 #include "core/sprite.hpp"
+#include "core/action.hpp"
 
 
 /*
@@ -46,6 +47,9 @@
 /// 객체 참조는 const * , 구조체는 const &을 사용, 일단 이렇게 고정.
 
 
+//윈도우는 단일 윈도우이며, Scene은 하나씩 사용하는 것으로 확정하고 진행.
+
+
 class Demp : public Sprite
 {
 public:
@@ -54,10 +58,10 @@ public:
     {
         
     }
-    virtual void update(float dt)
+    /*virtual void update(float dt)
     {
         
-    }
+    }*/
     virtual void touched(const Touch& touch)
     {
         
@@ -86,26 +90,39 @@ int main(int argc, const char * argv[]) {
     
     //사용이 간단하므로 일단 완성.
     Demp* a = new Demp(renderer, "sample.bmp");
-    a->setRect(100, 100, 100, 100);
+    a->setRect(0, 0, 100, 100);
+    
+    SpriteAction* act = new MoveTo({200,200}, 100.0);
+    a->addAction(act);
+    act->run();
     
     SDL_SetRenderDrawColor(renderer, 255, 255, 0, 100);
     SDL_RenderClear(renderer);
     
     
     
-    a->render();
-    
-    
-    
-    
-    //SDL_BlitSurface(gHelloWorld, NULL, gScreenSurface, NULL);
-    //SDL_UpdateWindowSurface(gWindow);
-    SDL_RenderPresent(renderer);
+        
+        
+        
+        
+        //SDL_BlitSurface(gHelloWorld, NULL, gScreenSurface, NULL);
+        //SDL_UpdateWindowSurface(gWindow);
+
     
     
     bool running = true;
     while(running)
     {
+        SDL_RenderClear(renderer);
+        
+        a->update(0.1);
+        a->render();
+        
+        
+        SDL_RenderPresent(renderer);
+        
+        
+        
         SDL_Event e;
         while(SDL_PollEvent(&e))
         {
@@ -114,11 +131,14 @@ int main(int argc, const char * argv[]) {
                 case SDL_QUIT:
                     running = false;
                     break;
+                    
             }
+            
         }
     }
     
-    
+    delete a;
+    SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(gWindow);
     
     SDL_Quit();
@@ -127,3 +147,10 @@ int main(int argc, const char * argv[]) {
     
     return 0;
 }
+
+
+
+
+
+
+

@@ -31,6 +31,7 @@ template <class T> struct tvec2
     inline tvec2& operator*=( T a ){ x*=a; y*=a; return *this; }
     inline tvec2& operator/=( T a ){ x/=a; y/=a; return *this; }
     
+    
     // casting
     inline operator T*(){ return &x; }
     inline operator const T*() const { return &x; }
@@ -69,6 +70,5 @@ template <class T> struct tvec2
 typedef tvec2<int> ivec2;
 typedef tvec2<float> fvec2;
 typedef tvec2<double> dvec2;
-
 
 #endif /* vec2_h */

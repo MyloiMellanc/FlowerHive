@@ -160,7 +160,14 @@ void MoveTo::update(float dt)
         _pTimer->update(dt);
         float percentage = _pTimer->getGoalPercentage();
         
-        Position current = _start + ((_goal - _start) * percentage);
+        //
+        //이부분은 생각해볼 필요성이 있다.
+        //
+        Position delta = _goal - _start;
+        delta.x = static_cast<int>(delta.x * percentage);
+        delta.y = static_cast<int>(delta.y * percentage);
+        
+        Position current = _start + delta;
         _pTarget->setPosition(current);
         
         if(_pTimer->isFinished())

@@ -28,6 +28,7 @@ public:
     bool isRunning() const;
     bool isFinished() const;
     
+    
     void run();
     
     virtual void update(float dt) = 0;
@@ -48,6 +49,8 @@ public:
     TimerAction(float time);
     
     ~TimerAction();
+    
+    
     
     void setGoal(float goal);
     float getGoalTime() const;
@@ -94,6 +97,7 @@ public:
     
     
     virtual ~MoveTo();
+    
     
     virtual void setSprite(Sprite* sprite);
     

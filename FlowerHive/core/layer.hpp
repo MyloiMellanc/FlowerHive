@@ -9,20 +9,29 @@
 #ifndef layer_hpp
 #define layer_hpp
 
+
+#include "macro.h"
+
 #include <vector>
 
 class Sprite;
-class LayerAction;
+//class LayerAction;
 
 
 class LayerMethod
 {
+public:
     
 };
 
+class LayerMethodSDL : public LayerMethod
+{
+    
+};
 
 class Layer
 {
+    
     
     
 private:
@@ -30,7 +39,7 @@ private:
     std::vector<Layer*>  _pSublayer_list;
     std::vector<Sprite*> _pSprite_list;
     
-    std::vector<LayerAction*> _pAction_list;
+    //std::vector<LayerAction*> _pAction_list;
     
     LayerMethod* _pMethod;
 };

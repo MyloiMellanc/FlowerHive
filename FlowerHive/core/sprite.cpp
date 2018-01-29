@@ -191,6 +191,7 @@ bool Sprite::isTouched() const
 void Sprite::addAction(SpriteAction* action)
 {
     _pAction_list.push_back(action);
+    action->setSprite(this);
 }
 
 
