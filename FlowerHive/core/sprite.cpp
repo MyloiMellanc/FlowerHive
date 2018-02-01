@@ -8,6 +8,7 @@
 
 #include "sprite.hpp"
 #include "action.hpp"
+#include "methodfactory.hpp"
 
 #include <iostream>
 #include <algorithm>
@@ -87,7 +88,7 @@ Sprite::Sprite(Renderer* renderer)
 , _rect({0,0,0,0})
 , _pLayer(nullptr)
 {
-    _pMethod = new SPRITE_METHOD(renderer, this);
+    _pMethod = MethodFactory::getInstance()->createSpriteMethod(renderer, this, nullptr);
 }
 
 
@@ -96,7 +97,7 @@ Sprite::Sprite(Renderer* renderer, const char* texture_name)
 , _rect({0,0,0,0})
 , _pLayer(nullptr)
 {
-    _pMethod = new SPRITE_METHOD(renderer, this, texture_name);
+    _pMethod = MethodFactory::getInstance()->createSpriteMethod(renderer, this, texture_name);
 }
 
 

@@ -10,6 +10,7 @@
 		BF046FDE201F934E00110876 /* director.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF046FDC201F934E00110876 /* director.cpp */; };
 		BF1169F6200BD7A300E8A92E /* boardfactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF1169F4200BD7A300E8A92E /* boardfactory.cpp */; };
 		BF1169F9200BD81200E8A92E /* sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF1169F7200BD81200E8A92E /* sprite.cpp */; };
+		BF31310320235DC200513657 /* methodfactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF31310120235DC200513657 /* methodfactory.cpp */; };
 		BF49CF62200676330096FA5D /* board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF49CF60200676330096FA5D /* board.cpp */; };
 		BF49CF652006763D0096FA5D /* tile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF49CF632006763D0096FA5D /* tile.cpp */; };
 		BF49CF68200676450096FA5D /* line.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF49CF66200676450096FA5D /* line.cpp */; };
@@ -56,6 +57,8 @@
 		BF1169F5200BD7A300E8A92E /* boardfactory.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = boardfactory.hpp; sourceTree = "<group>"; };
 		BF1169F7200BD81200E8A92E /* sprite.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sprite.cpp; sourceTree = "<group>"; };
 		BF1169F8200BD81200E8A92E /* sprite.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = sprite.hpp; sourceTree = "<group>"; };
+		BF31310120235DC200513657 /* methodfactory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = methodfactory.cpp; sourceTree = "<group>"; };
+		BF31310220235DC200513657 /* methodfactory.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = methodfactory.hpp; sourceTree = "<group>"; };
 		BF49CF60200676330096FA5D /* board.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = board.cpp; sourceTree = "<group>"; };
 		BF49CF61200676330096FA5D /* board.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = board.hpp; sourceTree = "<group>"; };
 		BF49CF632006763D0096FA5D /* tile.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tile.cpp; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 				BFC5273C2014EFA90015518A /* scene.hpp */,
 				BF046FDC201F934E00110876 /* director.cpp */,
 				BF046FDD201F934E00110876 /* director.hpp */,
+				BF31310120235DC200513657 /* methodfactory.cpp */,
+				BF31310220235DC200513657 /* methodfactory.hpp */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 				BFC52758201516B40015518A /* gamemaster.cpp in Sources */,
 				BFC52755201513C60015518A /* playermanager.cpp in Sources */,
 				BFC527402014EFB80015518A /* gamestate.cpp in Sources */,
+				BF31310320235DC200513657 /* methodfactory.cpp in Sources */,
 				BFC5276420151ED70015518A /* floweritem.cpp in Sources */,
 				BFC52752201513170015518A /* gamestatefactory.cpp in Sources */,
 				BF49CF68200676450096FA5D /* line.cpp in Sources */,

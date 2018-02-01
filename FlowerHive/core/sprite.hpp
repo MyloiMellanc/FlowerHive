@@ -9,15 +9,14 @@
 #ifndef sprite_hpp
 #define sprite_hpp
 
+
 #include "vec2.h"
 #include "macro.h"
+
 
 #include <vector>
 #include <SDL2/SDL.h>
 
-
-
-#define SPRITE_METHOD SpriteMethodSDL
 
 
 

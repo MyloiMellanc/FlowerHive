@@ -27,6 +27,9 @@ public:
 class LayerMethodSDL : public LayerMethod
 {
     
+    
+    //background
+    
 };
 
 class Layer
