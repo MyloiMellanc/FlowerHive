@@ -8,23 +8,64 @@
 
 #include "methodfactory.hpp"
 
+#include "director.hpp"
+#include "layer.hpp"
 #include "sprite.hpp"
+
+
+#include <SDL2/SDL.h>
+
 
 MethodFactory* MethodFactory::_pInstance = nullptr;
 
 
 MethodFactory* MethodFactory::getInstance()
 {
-    return new MethodFactorySDL();
+    if(_pInstance == nullptr)
+    {
+        _pInstance = new MethodFactorySDL();
+    }
+    
+    return _pInstance;
 }
 
 
 
 
-
-SpriteMethod* MethodFactorySDL::createSpriteMethod(Renderer* renderer, Sprite* sprite, const char* texture_name)
+bool MethodFactorySDL::init()
 {
-    return new SpriteMethodSDL(renderer, sprite, texture_name);
+    if(SDL_Init(SDL_INIT_VIDEO) != 0)
+        return false;
+    
+    return true;
+}
+
+void MethodFactorySDL::deinit()
+{
+    SDL_Quit();
+}
+
+
+DirectorMethod* MethodFactorySDL::createDirectorMethod()
+{
+    return new DirectorMethodSDL();
+}
+
+
+LayerMethod* MethodFactorySDL::createLayerMethod()
+{
+    return new LayerMethodSDL();
+}
+
+
+SpriteMethod* MethodFactorySDL::createSpriteMethod()
+{
+    return new SpriteMethodSDL();
+}
+
+SpriteMethod* MethodFactorySDL::createSpriteMethod(Renderer* renderer, const char* texture_name)
+{
+    return new SpriteMethodSDL(renderer, texture_name);
 }
 
 

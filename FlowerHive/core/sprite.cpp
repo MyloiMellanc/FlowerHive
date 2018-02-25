@@ -14,9 +14,7 @@
 #include <algorithm>
 
 
-SpriteMethod::SpriteMethod(Renderer* renderer, Sprite* sprite)
-: _pRenderer(renderer)
-, _pSprite(sprite)
+SpriteMethod::SpriteMethod()
 {}
 
 SpriteMethod::~SpriteMethod()
@@ -27,16 +25,15 @@ SpriteMethod::~SpriteMethod()
 
 #include <SDL2/SDL.h>
 
-SpriteMethodSDL::SpriteMethodSDL(Renderer* renderer, Sprite* sprite)
-: SpriteMethod(renderer, sprite)
-, _pTexture(nullptr)
+SpriteMethodSDL::SpriteMethodSDL()
+: _pTexture(nullptr)
 { }
 
-SpriteMethodSDL::SpriteMethodSDL(Renderer* renderer, Sprite* sprite, const char* texture_name)
-: SpriteMethod(renderer, sprite)
-, _pTexture(nullptr)
+SpriteMethodSDL::SpriteMethodSDL(Renderer* renderer, const char* texture_name)
+: _pTexture(nullptr)
 {
-    setTexture(texture_name);
+    if(setTexture(renderer, texture_name) == false)
+        std::cout << "Set Texture failed" << std::endl;
 }
 
 SpriteMethodSDL::~SpriteMethodSDL()
@@ -45,17 +42,14 @@ SpriteMethodSDL::~SpriteMethodSDL()
         SDL_DestroyTexture(_pTexture);
 }
 
-void SpriteMethodSDL::drawTextureWithRect()
+void SpriteMethodSDL::drawTextureWithFrame(Renderer* renderer, const Frame& frame)
 {
-    if(_pTexture == nullptr)
-        return;
-    
-    Rect rect = _pSprite->getRect();
-    SDL_SetRenderTarget(_pRenderer, _pTexture);
-    SDL_RenderCopy(_pRenderer, _pTexture, NULL, &rect);
+    SDL_Rect rect = {frame.position.x, frame.position.y, frame.scale.width, frame.scale.height};
+    SDL_SetRenderTarget(renderer, _pTexture);
+    SDL_RenderCopy(renderer, _pTexture, NULL, &rect);
 }
 
-bool SpriteMethodSDL::setTexture(const char* texture_name)
+bool SpriteMethodSDL::setTexture(Renderer* renderer, const char* texture_name)
 {
     SDL_Surface* surface = SDL_LoadBMP(texture_name);
     if(surface == NULL)
@@ -67,7 +61,7 @@ bool SpriteMethodSDL::setTexture(const char* texture_name)
     if(_pTexture != NULL)
         SDL_DestroyTexture(_pTexture);
     
-    _pTexture = SDL_CreateTextureFromSurface(_pRenderer, surface);
+    _pTexture = SDL_CreateTextureFromSurface(renderer, surface);
     if(_pTexture == NULL)
     {
         SDL_FreeSurface(surface);
@@ -83,21 +77,19 @@ bool SpriteMethodSDL::setTexture(const char* texture_name)
 
 
 
-Sprite::Sprite(Renderer* renderer)
+Sprite::Sprite()
 : _touched(false)
-, _rect({0,0,0,0})
 , _pLayer(nullptr)
 {
-    _pMethod = MethodFactory::getInstance()->createSpriteMethod(renderer, this, nullptr);
+    _pMethod = MethodFactory::getInstance()->createSpriteMethod();
 }
 
 
 Sprite::Sprite(Renderer* renderer, const char* texture_name)
 : _touched(false)
-, _rect({0,0,0,0})
 , _pLayer(nullptr)
 {
-    _pMethod = MethodFactory::getInstance()->createSpriteMethod(renderer, this, texture_name);
+    _pMethod = MethodFactory::getInstance()->createSpriteMethod(renderer, texture_name);
 }
 
 
@@ -109,6 +101,11 @@ Sprite::~Sprite()
     {
         delete _pAction_list[i];
     }
+}
+
+void Sprite::drawTextureWithFrame(Renderer* renderer)
+{
+    _pMethod->drawTextureWithFrame(renderer, _frame.getAnchoredFrame());
 }
 
 
@@ -125,64 +122,82 @@ void Sprite::update(float dt)
     }
 }
 
-
-void Sprite::setTexture(const char* texture_name)
+void Sprite::render(Renderer* renderer)
 {
-    _pMethod->setTexture(texture_name);
+    drawTextureWithFrame(renderer);
+}
+
+
+void Sprite::setTexture(Renderer* renderer, const char* texture_name)
+{
+    _pMethod->setTexture(renderer, texture_name);
 }
 
 
 void Sprite::setPosition(const Position& position)
 {
-    _rect.x = position.x;
-    _rect.y = position.y;
+    _frame.position.x = position.x;
+    _frame.position.y = position.y;
 }
 
 void Sprite::setPosition(int x, int y)
 {
-    _rect.x = x;
-    _rect.y = y;
+    _frame.position.x = x;
+    _frame.position.y = y;
 }
 
 Position Sprite::getPosition() const
 {
-    return Position(_rect.x, _rect.y);
+    return _frame.position;
 }
 
 void Sprite::setScale(const Scale& scale)
 {
-    _rect.w = scale.w;
-    _rect.h = scale.h;
+    _frame.scale.width = scale.width;
+    _frame.scale.height = scale.height;
 }
 
 void Sprite::setScale(int width, int height)
 {
-    _rect.w = width;
-    _rect.h = height;
+    _frame.scale.width = width;
+    _frame.scale.height = height;
 }
 
 Scale Sprite::getScale() const
 {
-    return scale(_rect.w, _rect.h);
+    return _frame.scale;
 }
 
-void Sprite::setRect(const Rect& rect)
+void Sprite::setFrame(const Frame& frame)
 {
-    _rect = rect;
+    _frame = frame;
 }
 
-void Sprite::setRect(int x, int y, int width, int height)
+void Sprite::setFrame(int x, int y, int width, int height)
 {
-    _rect.x = x;
-    _rect.y = y;
-    _rect.w = width;
-    _rect.h = height;
+    _frame.position.x = x;
+    _frame.position.y = y;
+    _frame.scale.width = width;
+    _frame.scale.height = height;
 }
 
-Rect Sprite::getRect() const
+Frame Sprite::getFrame() const
 {
-    return _rect;
+    return _frame;
 }
+
+
+void Sprite::setAnchorPoint(float x, float y)
+{
+    _frame.anchor_point.x = x;
+    _frame.anchor_point.y = y;
+}
+
+AnchorPoint Sprite::getAnchorPoint() const
+{
+    return _frame.anchor_point;
+}
+
 
 bool Sprite::isTouched() const
 {

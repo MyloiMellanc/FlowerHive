@@ -20,7 +20,10 @@ class LineData
 {
 public:
     
+    
+    
 private:
+    TileData* _pAdjust_tile[2];
     
 };
 
@@ -32,6 +35,8 @@ public:
     
     
 private:
+    Tile* _pAdjust_tile[2];
+    
     LineData* _pData;
     
 };

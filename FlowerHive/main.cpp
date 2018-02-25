@@ -10,10 +10,7 @@
 #include <SDL2/SDL.h>
 
 
-
-
-#include "core/sprite.hpp"
-#include "core/action.hpp"
+#include "gameheader.hpp"
 
 
 /*
@@ -67,37 +64,52 @@ public:
         
     }
     
-    virtual void render()
-    {
-        drawTextureWithRect();
-    }
 };
 
 
 
 int main(int argc, const char * argv[]) {
     
+    if(MethodFactory::getInstance()->init() == false)
+        return 0;
     
-    //TTF_Init();
-    SDL_Init(SDL_INIT_VIDEO);
+    if(Director::getInstance()->init(800, 600) == false)
+        return 0;
     
-    SDL_Window* gWindow = nullptr;
+    Renderer* renderer = Director::getInstance()->createRenderer();
     
-    
-    //해당 코드는 이 게임이 단일 윈도우를 갖고있는 것을 확정시킨다. - 윈도우 객체 자체에 렌더러를 등록시켜야 한다. (프로그램 진행 중 변동될 일이 없다.)
-    gWindow = SDL_CreateWindow("Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 640, 480, SDL_WINDOW_SHOWN);
-    SDL_Renderer* renderer = SDL_CreateRenderer(gWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_TARGETTEXTURE);
-    
-    //사용이 간단하므로 일단 완성.
     Demp* a = new Demp(renderer, "sample.bmp");
-    a->setRect(0, 0, 100, 100);
+    a->setFrame(50, 50, 100, 100);
+    
+    
+    Layer* layer = new Layer();
+    
+    Scene* scene = new Scene(renderer);
+    
+    
+    /*TTF_Init();*/
+    
     
     SpriteAction* act = new MoveTo({200,200}, 100.0);
     a->addAction(act);
     act->run();
     
-    SDL_SetRenderDrawColor(renderer, 255, 255, 0, 100);
-    SDL_RenderClear(renderer);
+    
+    
+    layer->addSprite(a);
+    scene->setLayer(layer);
+    Director::getInstance()->setScene(scene);
+    
+    
+    Director::getInstance()->run();
+    
+    
+    
+    MethodFactory::getInstance()->deinit();
+    
+    
+    //SDL_SetRenderDrawColor(renderer, 255, 255, 0, 100);
+    //SDL_RenderClear(renderer);
     
     
     
@@ -108,18 +120,18 @@ int main(int argc, const char * argv[]) {
         //SDL_BlitSurface(gHelloWorld, NULL, gScreenSurface, NULL);
         //SDL_UpdateWindowSurface(gWindow);
 
-    
+    /*
     
     bool running = true;
     while(running)
     {
-        SDL_RenderClear(renderer);
+        //SDL_RenderClear(renderer);
         
-        a->update(0.1);
-        a->render();
+        //a->update(0.1);
+        //a->render();
         
         
-        SDL_RenderPresent(renderer);
+        //SDL_RenderPresent(renderer);
         
         
         
@@ -135,13 +147,10 @@ int main(int argc, const char * argv[]) {
             }
             
         }
-    }
+    }*/
     
-    delete a;
-    SDL_DestroyRenderer(renderer);
-    SDL_DestroyWindow(gWindow);
     
-    SDL_Quit();
+    //SDL_Quit();
     
     //TTF_Quit();
     

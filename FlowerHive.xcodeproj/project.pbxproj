@@ -70,6 +70,7 @@
 		BF49CF7D200693CF0096FA5D /* flower.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = flower.hpp; sourceTree = "<group>"; };
 		BF49CF7F200693D60096FA5D /* ovary.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ovary.cpp; sourceTree = "<group>"; };
 		BF49CF80200693D60096FA5D /* ovary.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ovary.hpp; sourceTree = "<group>"; };
+		BF9F3EE2202455B100D5DDB5 /* gameheader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = gameheader.hpp; sourceTree = "<group>"; };
 		BFC5272C2014EA4D0015518A /* action.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = action.cpp; sourceTree = "<group>"; };
 		BFC5272D2014EA4D0015518A /* action.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = action.hpp; sourceTree = "<group>"; };
 		BFC527322014EC200015518A /* player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = player.cpp; sourceTree = "<group>"; };
@@ -241,6 +242,7 @@
 				BF49CF8E20069A430096FA5D /* player */,
 				BF49CF8D200699900096FA5D /* board */,
 				BF49CF5F200676230096FA5D /* game */,
+				BF9F3EE2202455B100D5DDB5 /* gameheader.hpp */,
 				BFF142072006025300C41BBB /* main.cpp */,
 			);
 			path = FlowerHive;

@@ -41,11 +41,11 @@ public:
     
     
     
-    void setCenterPosition(const fvec2& center_position);
-    void setInterval(const float interval);
+    void setCenterPosition(const Position& center_position);
+    void setInterval(const pos_type interval);
     
     
-    fvec2 getCenterPosition() const;
+    Position getCenterPosition() const;
     float getInterval() const;
     
 private:
@@ -54,8 +54,8 @@ private:
     std::vector<Tile*> _pTile_list;
     std::vector<Line*> _pLine_list;
     
-    fvec2 _center_position;
-    float _interval;
+    Position _center_position;
+    pos_type _interval;
 };
 
 

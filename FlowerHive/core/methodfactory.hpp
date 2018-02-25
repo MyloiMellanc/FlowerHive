@@ -18,16 +18,27 @@ class Sprite;
 class LayerMethod;
 class Layer;
 
-class SceneMethod;
-class Scene;
+
+class DirectorMethod;
+class Director;
 
 
 class MethodFactory
 {
 public:
+    
     static MethodFactory* getInstance();
     
-    virtual SpriteMethod* createSpriteMethod(Renderer* renderer, Sprite* sprite, const char* texture_name) = 0;
+    
+    virtual bool init() = 0;
+    virtual void deinit() = 0;
+    
+    virtual DirectorMethod* createDirectorMethod() = 0;
+    
+    virtual LayerMethod* createLayerMethod() = 0;
+    
+    virtual SpriteMethod* createSpriteMethod() = 0;
+    virtual SpriteMethod* createSpriteMethod(Renderer* renderer, const char* texture_name) = 0;
     
     
 private:
@@ -37,8 +48,20 @@ private:
 
 class MethodFactorySDL : public MethodFactory
 {
-    virtual SpriteMethod* createSpriteMethod(Renderer* renderer, Sprite* sprite, const char* texture_name);
+public:
+    
+    virtual bool init();
+    virtual void deinit();
+    
+    virtual DirectorMethod* createDirectorMethod();
+    
+    virtual LayerMethod* createLayerMethod();
+    
+    virtual SpriteMethod* createSpriteMethod();
+    virtual SpriteMethod* createSpriteMethod(Renderer* renderer, const char* texture_name);
 };
+
+
 
 #endif /* methodfactory_hpp */
 

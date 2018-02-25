@@ -17,7 +17,20 @@
 #include <vector>
 #include <SDL2/SDL.h>
 
+/*
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
 
+
+////////////////////////////////////////////////////////////////
 
 
 class SpriteAction;
@@ -31,19 +44,18 @@ class Sprite;
 class SpriteMethod
 {
 PROTECT_CONSTRUCTOR_ACCESS:
-    SpriteMethod(Renderer* renderer, Sprite* sprite);
+    SpriteMethod();
     
 public:
     virtual ~SpriteMethod();
     
     
-    virtual void drawTextureWithRect() = 0;
+    virtual void drawTextureWithFrame(Renderer* renderer, const Frame& frame) = 0;
     
-    virtual bool setTexture(const char* texture_name) = 0;
+    virtual bool setTexture(Renderer* renderer, const char* texture_name) = 0;
     
 protected:
-    Renderer* _pRenderer;
-    Sprite* _pSprite;
+
 };
 
 //해당 매서드들을 SDL 라이브러리로 구현
@@ -54,17 +66,15 @@ protected:
 class SpriteMethodSDL : public SpriteMethod
 {
 public:
-    SpriteMethodSDL(Renderer* renderer, Sprite* sprite);
-    SpriteMethodSDL(Renderer* renderer, Sprite* sprite, const char* texture_name);
+    SpriteMethodSDL();
+    SpriteMethodSDL(Renderer* renderer,  const char* texture_name);
     
     virtual ~SpriteMethodSDL();
     
-    virtual void drawTextureWithRect();
     
+    virtual void drawTextureWithFrame(Renderer* renderer, const Frame& frame);
     
-    
-    
-    virtual bool setTexture(const char* texture_name);
+    virtual bool setTexture(Renderer* renderer, const char* texture_name);
     
 private:
     SDL_Texture* _pTexture;
@@ -79,12 +89,14 @@ private:
  *
  * 결론 : 렌더러는 고정적으로, 변동될 일이 없는 대상이므로, 생성시마다 제시하도록 한다.(렌더링시에는 항상 필요하니까.)
  *                                                      -> 이러면 렌더링 루프시마다 매개변수로 전달을 안해도 된다.
+ *
+ *                      -> 신에서 관리되는 렌더러를 제공받음
  */
 
 class Sprite
 {
 PROTECT_CONSTRUCTOR_ACCESS:
-    Sprite(Renderer* renderer);
+    Sprite();
     Sprite(Renderer* renderer, const char* texture_name);   //with texture
     
     
@@ -94,10 +106,7 @@ public:
     
 protected:
     //Templaye Method implemented in SpriteMethod class
-    inline void drawTextureWithRect()
-    {
-        _pMethod->drawTextureWithRect();
-    }
+    void drawTextureWithFrame(Renderer* renderer);
     
     
     
@@ -106,10 +115,12 @@ protected:
     
 public:
     virtual void update(float dt);
-    virtual void render() = 0;
+    virtual void render(Renderer* renderer);
     virtual void touched(const Touch& touch) = 0;
     
-    void setTexture(const char* texture_name);
+    
+    
+    void setTexture(Renderer* renderer, const char* texture_name);
     
     
     void setPosition(const Position& position);
@@ -120,9 +131,12 @@ public:
     void setScale(int width, int height);
     Scale getScale() const;
     
-    void setRect(const Rect& rect);
-    void setRect(int x, int y, int width, int height);
-    Rect getRect() const;
+    void setFrame(const Frame& frame);
+    void setFrame(int x, int y, int width, int height);
+    Frame getFrame() const;
+    
+    void setAnchorPoint(float x, float y);
+    AnchorPoint getAnchorPoint() const;
     
     bool isTouched() const;
     
@@ -133,7 +147,7 @@ public:
     
 private:
     bool _touched;
-    Rect _rect;
+    Frame _frame;
     
     std::vector<SpriteAction*> _pAction_list;
     //std::vector<Sprite*> _pSubsprite_list;        it doesn't needed in this time

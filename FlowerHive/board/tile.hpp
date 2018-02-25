@@ -9,36 +9,35 @@
 #ifndef tile_hpp
 #define tile_hpp
 
+#include <vector>
+
 #include "../core/vec2.h"
 #include "../core/sprite.hpp"
 
 class LineData;
+class Line;
 
+
+typedef int tile_owner;
+
+enum TILE_OWNER
+{
+    NEUTRAL = 0
+};
 
 
 class TileData
 {
 public:
-    virtual TileData* getAdjustTileData(int direction);
+    
     
 private:
-    //TileData* _pAdjust_tile[6];
+    std::vector<LineData*> _pLine_list;
     
     int _tile_number;
-    int _owner;
+    tile_owner _owner;
     
 };
-
-class HexTileData : public TileData
-{
-public:
-    virtual TileData* getAdjustTileData(int direction);
-    
-private:
-    TileData*   _pAdjust_tile[6];
-};
-
-
 
 
 
@@ -48,25 +47,22 @@ private:
 class Tile : public Sprite
 {
 public:
-    virtual Tile* getAdjustTile(int direction);
+    Tile();
     
+    virtual ~Tile();
+    
+    
+    virtual void update(float dt);
+    virtual void render(Renderer* renderer);
+    virtual void touched(const Touch& touch);
     
 private:
-    //Tile* _pAdjust_tile[6];
+    std::vector<Line*> _pLine_list;
     
     TileData* _pData;
     
 };
 
-
-class HexTile : public Tile
-{
-public:
-    virtual Tile* getAdjustTile(int direction);
-    
-private:
-    Tile* _pAdjust_tile[6];
-};
 
 
 #endif /* tile_hpp */
